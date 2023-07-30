@@ -5,7 +5,7 @@ const RootLayout = ({ children }) => {
     return (
         <>
             <Navbar></Navbar>
-            <div style={{ minHeight: '100%' }}>
+            <div style={{ minHeight: '100vh' }}>
                 {children}
             </div>
             <Footer></Footer>
