@@ -1,0 +1,41 @@
+.banner{
+    border: 1px solid rgb(186, 186, 186);
+    border-radius: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: justify;
+
+}
+.banner .banner-text{
+    font-size: 30px;
+}
+
+@media only screen and (min-width: 500px)  {
+    .banner{
+       
+       
+        padding: 50px;
+        
+        flex-direction: column;
+        gap: 30px;
+        
+       
+        text-align: justify;
+    
+    }
+}
+@media only screen and (min-width: 800px)  {
+    .banner{
+       
+       
+        padding: 50px;
+        
+        flex-direction: row;
+        gap: 30px;
+        
+    }
+}

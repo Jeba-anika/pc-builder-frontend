@@ -4,6 +4,7 @@ import RootLayout from '@/components/layouts/RootLayout';
 import Navbar from '@/components/Navbar';
 import ProductCard from '@/components/ProductCard';
 import FeaturedCard from '@/components/FeaturedCard';
+import Banner from '@/components/Banner';
 
 const Home = ({ categories, featured }) => {
   return (
@@ -13,6 +14,7 @@ const Home = ({ categories, featured }) => {
         <title>PC Builder</title>
       </Head>
       <main className='home-container' >
+        <Banner></Banner>
         <div className='featured' >
           <div style={{ textAlign: "center" }}>
             <h3 style={{ fontWeight: 'bold' }}>Featured Products</h3>
