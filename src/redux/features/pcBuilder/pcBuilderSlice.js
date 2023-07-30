@@ -14,12 +14,12 @@ const pcBuilderSlice = createSlice({
     initialState,
     reducers: {
         addComponent: (state, action) => {
-            const categoryId = action.product.categoryId
-            state[categoryId] = action.product
+            const categoryId = action.payload.categoryId
+            state[categoryId] = action.payload
         }
     }
 })
 
-export const { } = pcBuilderSlice.actions
+export const { addComponent } = pcBuilderSlice.actions
 
 export default pcBuilderSlice.reducer
