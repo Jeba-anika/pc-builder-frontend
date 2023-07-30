@@ -1,11 +1,14 @@
+import Footer from "../Footer";
 import Navbar from "../Navbar";
 
 const RootLayout = ({ children }) => {
     return (
         <>
             <Navbar></Navbar>
-            {children}
-
+            <div style={{ minHeight: '100%' }}>
+                {children}
+            </div>
+            <Footer></Footer>
         </>
     );
 };
