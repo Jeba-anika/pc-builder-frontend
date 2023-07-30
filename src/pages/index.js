@@ -12,9 +12,8 @@ const Home = ({ categories, featured }) => {
         <meta name="home page" description="This is a pc builder website"></meta>
         <title>PC Builder</title>
       </Head>
-      <Navbar categories={categories}></Navbar>
-      <main style={{ margin: "0 100px" }}>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginBottom: "50px" }}>
+      <main style={{ margin: "30px 100px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", placeItems: "center", gap: "15px", marginBottom: "30px" }}>
           {featured?.map(product => <ProductCard key={product.id} product={product}></ProductCard>)}
         </div>
         <div style={{ display: "flex", gap: "15px", flexWrap: "wrap", }}>
@@ -27,11 +26,11 @@ const Home = ({ categories, featured }) => {
 
 export default Home;
 
-// Home.getLayout = function getLayout(page) {
-//   return (
-//     <RootLayout>{page}</RootLayout>
-//   )
-// }
+Home.getLayout = function getLayout(page) {
+  return (
+    <RootLayout>{page}</RootLayout>
+  )
+}
 // export const getStaticProps = async () => {
 //   const res = await fetch("https://pc-builder-backend-tan.vercel.app/category")
 //   const data = await res.json()
