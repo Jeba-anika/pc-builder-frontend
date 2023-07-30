@@ -16,7 +16,6 @@ export default CategoryProducts;
 export const getStaticPaths = async () => {
     const res = await fetch("https://pc-builder-backend-tan.vercel.app/category")
     const data = await res.json()
-    console.log(data)
     const paths = data.map(item => ({ params: { id: item.id } }))
     return { paths, fallback: "blocking" }
 }
