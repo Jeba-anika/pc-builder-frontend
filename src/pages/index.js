@@ -12,11 +12,22 @@ const Home = ({ categories, featured }) => {
         <meta name="home page" description="This is a pc builder website"></meta>
         <title>PC Builder</title>
       </Head>
-      <main style={{ margin: "30px 100px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", placeItems: "center", gap: "15px", marginBottom: "30px" }}>
+      <main className='home-container' >
+        <div className='featured' >
+          <div style={{ textAlign: "center" }}>
+            <h3 style={{ fontWeight: 'bold' }}>Featured Products</h3>
+          </div>
+        </div>
+        <div className='product-container' >
           {featured?.map(product => <ProductCard key={product.id} product={product}></ProductCard>)}
         </div>
-        <div style={{ display: "flex", gap: "15px", flexWrap: "wrap", }}>
+        <div className='featured'>
+          <div style={{ textAlign: "center" }}>
+            <h3 style={{ fontWeight: 'bold' }}>Featured Category</h3>
+            Get Your Desired Product from Featured Category!
+          </div>
+        </div>
+        <div className='category-section' >
           {categories.map(category => <FeaturedCard key={category.id} category={category}></FeaturedCard>)}
         </div>
       </main>

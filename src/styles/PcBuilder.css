@@ -1,0 +1,14 @@
+.pc-builder-container{
+    margin: 10px;
+}
+
+@media only screen and (min-width: 700px)  {
+    .pc-builder-container{
+        margin: 50px;
+    }
+}
+@media only screen and (min-width: 1200px)  {
+    .pc-builder-container{
+        margin: 50px 150px;
+    }
+}

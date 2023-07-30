@@ -1,4 +1,5 @@
 import PcBuilderCard from '@/components/PcBuilderCard';
+import RootLayout from '@/components/layouts/RootLayout';
 import { Button, message } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -12,7 +13,7 @@ const PcBuilder = ({ categories }) => {
     const success = () => {
         messageApi.open({
             type: 'success',
-            content: 'This is a success message',
+            content: 'PC build completed',
         });
     };
 
@@ -36,17 +37,25 @@ const PcBuilder = ({ categories }) => {
 
 
     return (
-        <div>
+        <div className='pc-builder-container'>
             {contextHolder}
-            <div>
+            <div style={{ boxShadow: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)", padding: '15px', borderRadius: '5px' }}>
                 {categories.map(category => <PcBuilderCard category={category} key={category.id}></PcBuilderCard>)}
             </div>
-            <Button onClick={success} disabled={!isAllComponentAdded} type='primary'>Complete Build</Button>
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                <Button onClick={success} disabled={!isAllComponentAdded} type='primary'>Complete Build</Button>
+            </div>
         </div>
     );
 };
 
 export default PcBuilder;
+
+PcBuilder.getLayout = function getLayout(page) {
+    return (
+        <RootLayout>{page}</RootLayout>
+    )
+}
 
 export const getServerSideProps = async () => {
     const categoriesResponse = await fetch("https://pc-builder-backend-tan.vercel.app/category");

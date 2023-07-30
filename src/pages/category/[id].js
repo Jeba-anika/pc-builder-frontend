@@ -1,4 +1,5 @@
 import ProductCard from '@/components/ProductCard';
+import RootLayout from '@/components/layouts/RootLayout';
 import { useRouter } from 'next/router';
 import React from 'react';
 
@@ -7,7 +8,7 @@ const CategoryProducts = ({ products }) => {
     const { query } = router
 
     return (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", placeItems: "center" }}>
+        <div className='each-category-products-container' >
             {
                 products.map(product => <ProductCard product={product} key={product._id} isPcBuilderPage={query?.pcBuilder}></ProductCard>)
             }
@@ -16,6 +17,13 @@ const CategoryProducts = ({ products }) => {
 };
 
 export default CategoryProducts;
+
+
+CategoryProducts.getLayout = function getLayout(page) {
+    return (
+        <RootLayout>{page}</RootLayout>
+    )
+}
 
 export const getStaticPaths = async () => {
     const res = await fetch("https://pc-builder-backend-tan.vercel.app/category")

@@ -9,12 +9,12 @@ const PcBuilderCard = ({ category }) => {
     const addedComponent = state.pcBuilder[`${category.id}`]
     console.log(addedComponent)
     return (
-        <Card title={category.name} extra={<Button type="primary"><Link href={{
+        <Card style={{ marginBottom: '50px' }} title={category.name} extra={<Button type="primary"><Link href={{
             pathname: `/category/${category.id}`,
             query: { pcBuilder: true },
         }}>Choose</Link></Button>}>
             {
-                addedComponent?._id && <Card type="inner" title={addedComponent.productName} extra={<p>{addedComponent.price}</p>}>
+                addedComponent?._id && <Card type="inner" title={addedComponent.productName} extra={<p style={{ fontWeight: 'bold' }}>BDT {addedComponent.price}</p>}>
                     {addedComponent.status}
                 </Card>
             }
