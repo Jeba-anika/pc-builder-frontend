@@ -15,37 +15,37 @@ const NavbarDropdown = () => {
         {
             key: '2',
             label: (
-                <Link href={`category/02`}>CPU / Processor</Link>
+                <Link href={`category/02`}>Motherboard</Link>
             ),
         },
         {
             key: '3',
             label: (
-                <Link href={`category/03`}>CPU / Processor</Link>
+                <Link href={`category/03`}>RAM</Link>
             ),
         },
         {
             key: '4',
             label: (
-                <Link href={`category/04`}>CPU / Processor</Link>
+                <Link href={`category/04`}>Power Supply Unit</Link>
             ),
         },
         {
             key: '5',
             label: (
-                <Link href={`category/05`}>CPU / Processor</Link>
+                <Link href={`category/05`}>Storage Device</Link>
             ),
         },
         {
             key: '6',
             label: (
-                <Link href={`category/06`}>CPU / Processor</Link>
+                <Link href={`category/06`}>Monitor</Link>
             ),
         },
         {
             key: '7',
             label: (
-                <Link href={`category/07`}>CPU / Processor</Link>
+                <Link href={`category/07`}>Others</Link>
             ),
         }
     ];
@@ -56,7 +56,7 @@ const NavbarDropdown = () => {
                     items
                 }}
             >
-                <a style={{ color: "blue" }} onClick={(e) => e.preventDefault()}>
+                <a style={{ color: "blue", cursor: "pointer" }} onClick={(e) => e.preventDefault()}>
                     <Space>
                         Categories
                         <DownOutlined />
