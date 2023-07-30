@@ -29,8 +29,8 @@ const ProductCard = ({ product, isPcBuilderPage }) => {
                 title={product.productName}
                 description={`BDT ${product.price} (${product.status})`}
             />
-            <p>{product.category}</p>
-            <p>{product.rating}</p>
+            <p>Category: {product.category}</p>
+            <p>Rating: {product.rating}</p>
             {
                 isPcBuilderPage ? <Button onClick={() => dispatch(addComponent(product))} type="primary"><Link href={`/pc-builder`}>Add to builder</Link></Button>
                     :
